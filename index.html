@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ACTIVITY</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            text-align: center;
+        }
+
+        form {
+            max-width: 400px;
+            margin: 0 auto;
+            text-align: left;
+        }
+
+        h2 {
+            color: #f71212;
+        }
+
+        #profileOutput {
+            margin-top: 20px;
+            text-align: left;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>Student Profile</h2>
+
+    <form id="studentForm">
+        <label for="name">Name:</label>
+        <input type="text" id="name" required><br>
+
+        <label for="grade">Grade:</label>
+        <input type="text" id="grade" required><br>
+
+        <label for="enrollmentDate">Enrollment Date:</label>
+        <input type="date" id="enrollmentDate" required><br>
+
+        <label for="hobbies">Hobbies:</label>
+        <textarea id="hobbies" rows="4" required></textarea>
+
+        <button type="button" onclick="displayProfile()">Submit</button>
+    </form>
+
+    <div id="profileOutput"></div>
+
+    <script>
+        function displayProfile() {
+            // Get values from the form
+            var name = document.getElementById('name').value;
+            var grade = document.getElementById('grade').value;
+            var enrollmentDate = document.getElementById('enrollmentDate').value;
+            var hobbies = document.getElementById('hobbies').value;
+
+            // Display the profile information
+            var profileOutput = document.getElementById('profileOutput');
+            profileOutput.innerHTML = `
+                <h2>${name}'s Profile</h2>
+                <p><strong>Grade:</strong> ${grade}</p>
+                <p><strong>Enrollment Date:</strong> ${enrollmentDate}</p>
+                <p><strong>Hobbies:</strong> ${hobbies}</p>
+            `;
+        }
+
+    </script>
+
+</body>
+</html>
